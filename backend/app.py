@@ -5,12 +5,14 @@ from agent import health_agent
 from tools.emergency_tool import router as emergency_router
 from tools.home_remedy_tool import router as home_remedy_router
 from tools.symptom_rules_tool import router as symptom_rules_router
+from agents.triage_agent import router as triage_agent_router
 
 app = FastAPI(title="HealthGuard-AI", version="1.0.0")
 
 app.include_router(emergency_router, prefix="/tools", tags=["emergency"])
 app.include_router(home_remedy_router, prefix="/tools", tags=["home_remedy"])
 app.include_router(symptom_rules_router, prefix="/tools", tags=["symptom_rules"])
+app.include_router(triage_agent_router, prefix="/agent", tags=["agent"])
 
 
 # --- Request Schema ---
