@@ -1,1 +1,12 @@
-{}
+{
+    "fever": {
+        "causes": ["viral infection", "bacterial infection", "dehydration"],
+        "severity": "mild to moderate",
+        "advice": "Monitor temperature and stay hydrated."
+    },
+    "cough": {
+        "causes": ["cold", "flu", "allergy", "irritation"],
+        "severity": "mild",
+        "advice": "Warm fluids and rest recommended."
+    }
+}
