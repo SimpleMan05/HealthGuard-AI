@@ -8,6 +8,8 @@ from tools.symptom_rules_tool import router as symptom_rules_router
 from agents.triage_agent import router as triage_agent_router
 from frontend.chat_api import router as chat_router
 
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = FastAPI(title="HealthGuard-AI", version="1.0.0")
 
@@ -35,3 +37,12 @@ def home():
 async def analyze_symptom(payload: SymptomRequest):
     result = await health_agent.run({"symptom": payload.symptom})
     return result
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],   # allow all during development
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)

@@ -38,16 +38,18 @@ The backend implements a modular tool system:
 ---
 
 ## 🏗 Architecture Overview
+```
 User → /frontend/chat → Triage Agent →
 ├── Symptom Rules Tool
 ├── Emergency Tool
 ├── Home Remedy Tool
 Memory ←──────────────┘
+```
 
 ---
 
 ## 📂 Project Structure
-
+```
 backend/
 │
 ├── app.py
@@ -65,6 +67,7 @@ backend/
 
 demo.ipynb
 README.md
+```
 
 ---
 
