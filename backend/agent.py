@@ -5,6 +5,7 @@ from utils.mcp_tools import (
     get_emergency_guideline,
     get_home_remedy
 )
+from utils.response_validator import validate_response
 
 class HealthAgent:
     def __init__(self):
@@ -32,6 +33,8 @@ class HealthAgent:
             "memory": self.memory.get_history()
         }
 
-        return result
+        # run quality checks
+        final = validate_response(result)
+        return final
 
 health_agent = HealthAgent()
