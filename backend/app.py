@@ -1,8 +1,11 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from agent import health_agent
+from tools.emergency_tool import router as emergency_router
 
 app = FastAPI(title="HealthGuard-AI", version="1.0.0")
+
+app.include_router(emergency_router, prefix="/tools", tags=["emergency"])
 
 # --- Request Schema ---
 class SymptomRequest(BaseModel):
