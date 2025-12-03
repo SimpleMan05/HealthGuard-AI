@@ -53,39 +53,53 @@ Memory ←──────────────┘
 backend/
 │
 ├── app.py
+├── agent.py
 │
 ├── tools/
 │ ├── symptom_rules_tool.py
 │ ├── emergency_tool.py
 │ ├── home_remedy_tool.py
 │
-├── agent/
+├── agents/
 │ └── triage_agent.py
 │
 └── frontend/
-└── chat_api.py
+    └── chat_api.py
 
-demo.ipynb
-README.md
+frontend/
+│
+├── frontend/
+│ └── app/
+│     ├── page.tsx
+│     ├── layout.tsx
+│     ├── globals.css
+│
+└── index.html
 ```
 
 ---
 
 ## ⚡ Running Locally
 
-### 1️⃣ Install dependencies
+### Install dependencies
 ```
 pip install fastapi uvicorn httpx pydantic
 ```
 
-Start the server
+Start the backend server
 ``` 
 uvicorn app:app --reload
 ```
 
-Open UI at 
+for frontend UI, run
 ```
-http://127.0.0.1:8000/docs
+npm run dev
+```
+
+
+Open UI at (locally)
+```
+http://localhost:3000/
 ```
 
 Chat Endpoints, send your queries to 
